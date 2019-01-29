@@ -14,7 +14,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
@@ -38,7 +38,7 @@ about:
   home: https://github.com/UDST/choicemodels
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file: LICENSE.txt
   summary: 'Tools for discrete choice model estimation'
   description: choicemodels is a Python package for discrete choice estimation
   doc_url: http://choicemodels.readthedocs.io/
