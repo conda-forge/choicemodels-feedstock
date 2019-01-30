@@ -11,9 +11,9 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Tools for discrete choice model estimation
+Summary: Tools for discrete choice modeling
 
-choicemodels is a Python package for discrete choice estimation
+Choicemodels is a Python package for discrete choice modeling
 
 Current build status
 ====================
@@ -114,4 +114,5 @@ Feedstock Maintainers
 =====================
 
 * [@gboeing](https://github.com/gboeing/)
+* [@smmaurer](https://github.com/smmaurer/)
 
