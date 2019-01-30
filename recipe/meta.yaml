@@ -1,6 +1,6 @@
 {% set name = "choicemodels" %}
-{% set version = "0.2" %}
-{% set sha256 = "7bf809c2388f6af6fbaeb22aeac26d0e895be72c9751bdd0975b52ff1e41ff65" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "c30ed3f307e34fce5995ac8c2eeccd2cf22ad6afabc13b260c5255553d15ee90" %}
 
 package:
   name: {{ name|lower }}
