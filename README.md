@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About choicemodels
 ==================
 
@@ -18,8 +14,15 @@ Choicemodels is a Python package for discrete choice modeling
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/choicemodels-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/choicemodels-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2808&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/choicemodels-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
