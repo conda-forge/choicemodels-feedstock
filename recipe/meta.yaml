@@ -1,6 +1,6 @@
 {% set name = "choicemodels" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "c30ed3f307e34fce5995ac8c2eeccd2cf22ad6afabc13b260c5255553d15ee90" %}
+{% set version = "0.2.2" %}
+{% set sha256 = "05acd71d0f190047ff7c67897c0f6426d9e6dac442bfe12767694d995df0e3e1" %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +13,8 @@ source:
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -39,7 +39,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Tools for discrete choice modeling'
+  summary: Tools for discrete choice modeling
   description: Choicemodels is a Python package for discrete choice modeling
   doc_url: http://choicemodels.readthedocs.io/
   dev_url: https://github.com/UDST/choicemodels
