@@ -1,46 +1,63 @@
 {% set name = "choicemodels" %}
-{% set version = "0.2.2" %}
-{% set sha256 = "05acd71d0f190047ff7c67897c0f6426d9e6dac442bfe12767694d995df0e3e1" %}
+{% set version = "0.3" %}
+{% set sha256 = "b89f3c47f1295f243fa9a24f3e6b6075370e25805d9e95d49e281ef6b0c3f6eb" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
-  build:
-    - python
+  host:
+    - python {{ python_min }}
     - pip
+    - setuptools >=77
   run:
-    - python
-    - numpy
-    - pandas
-    - patsy
-    - pylogit
-    - scipy
-    - statsmodels
+    - python >={{ python_min }}
+    - numpy >=1.21
+    - pandas >=1.5,<4
+    - patsy >=0.5
+    - scipy >=1.7
+    - statsmodels >=0.13
+    - tqdm >=4.64
 
 test:
+  source_files:
+    - tests
   imports:
     - choicemodels
+  requires:
+    - python {{ python_min }}
+    - pip
+    - pytest
+  commands:
+    - pip check
+    - pytest tests -v
 
 about:
   home: https://github.com/UDST/choicemodels
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.txt
-  summary: Tools for discrete choice modeling
-  description: Choicemodels is a Python package for discrete choice modeling
-  doc_url: http://choicemodels.readthedocs.io/
+  license_file:
+    - LICENSE.txt
+    - PYLOGIT_ATTRIBUTION.md
+    - PYLOGIT_CONTRIBUTORS.txt
+    - licenses/PYLOGIT_LICENSE.txt
+  summary: Python library for discrete choice modeling
+  description: |
+    ChoiceModels is a Python library for discrete choice modeling, with utilities for
+    sampling, simulation, and other ancillary tasks. It's part of the Urban Data
+    Science Toolkit (UDST).
+  doc_url: https://udst.github.io/choicemodels/
   dev_url: https://github.com/UDST/choicemodels
 
 extra:
